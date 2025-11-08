@@ -13,7 +13,7 @@ ynh_script_progression "Setting up source files..."
 
 git clone https://github.com/enafore/enafore "$install_dir/.build" --quiet
 
-chown -R "$app:www-data" "$install_dir/.build"
+chown -R "$app:www-data" "$install_dir"
 
 #=================================================
 # BUILD APP
