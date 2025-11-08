@@ -1,0 +1,1 @@
+Enafore est un client fediverse offrant une meilleure prise en charge des instances Akkoma, glitch-soc et Iceshrimp.
