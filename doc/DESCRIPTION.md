@@ -1,0 +1,1 @@
+Enafore is a fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.

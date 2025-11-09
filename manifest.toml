@@ -1,0 +1,62 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "enafore"
+name = "Enafore"
+description.en = "Fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp"
+description.fr = "Client Fediverse avec une meilleure prise en charge d'Akkoma, glitch-soc et Iceshrimp"
+
+version = "2025.08.21~ynh1"
+
+maintainers = ["trendless"]
+
+[upstream]
+
+license = "AGPL-3.0-only"
+# website = ""
+demo = "https://enafore.social"
+admindoc = "https://github.com/enafore/enafore/blob/main/docs/Admin-Guide.md"
+userdoc = "https://github.com/enafore/enafore/blob/main/docs/User-Guide.md"
+code = "https://github.com/enafore/enafore"
+
+# The CPE may be obtained by searching here:
+# https://nvd.nist.gov/products/cpe/search.
+# For example, for Nextcloud, the CPE is 'cpe:2.3:a:nextcloud:nextcloud' (no need to include the version number)
+# cpe = "???"
+
+# fund = ""
+
+[integration]
+yunohost = ">= 12.1.17"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+sso = false
+
+disk = "1G"
+ram.build = "2G"
+ram.runtime = "100M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+
+    [resources.system_user]
+
+    [resources.install_dir]
+    group = "www-data:r-x"
+
+    [resources.permissions]
+     main.url = "/"
+
+    [resources.nodejs]
+    version = "20"
