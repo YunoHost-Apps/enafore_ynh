@@ -50,6 +50,12 @@ ram.runtime = "100M"
 
 [resources]
 
+    [resources.sources]
+        [resources.sources.main]
+        url = "https://github.com/enafore/enafore/archive/b5e505103e0757f22c9acf5ea3d32fbdc50436c5.tar.gz"
+        sha256 = "25a43a95aeff52fe34e08ac40d5f3d1973a2e2e9fe2e3812caf91abea524ed1a"
+        autoupdate.strategy = "latest_github_commit"
+
     [resources.system_user]
 
     [resources.install_dir]
