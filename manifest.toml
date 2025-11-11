@@ -7,7 +7,7 @@ name = "Enafore"
 description.en = "Fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp"
 description.fr = "Client Fediverse avec une meilleure prise en charge d'Akkoma, glitch-soc et Iceshrimp"
 
-version = "2025.08.21~ynh1"
+version = "2025.08.21~ynh2"
 
 maintainers = ["trendless"]
 
