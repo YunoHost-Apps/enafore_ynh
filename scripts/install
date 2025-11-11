@@ -11,9 +11,9 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-git clone https://github.com/enafore/enafore "$install_dir/.build" --quiet
+ynh_setup_source --dest_dir="$install_dir/.build"
 
-chown -R "$app:www-data" "$install_dir"
+chown -R "$app:$app" "$install_dir/.build"
 
 #=================================================
 # BUILD APP
@@ -22,6 +22,12 @@ ynh_script_progression "Building $app... (this may take a while)"
 
 pushd $install_dir/.build
     ynh_hide_warnings corepack enable
+    ynh_exec_as_app git config --global user.name "enafore"
+    ynh_exec_as_app git config --global user.email "you@example.com"
+    ynh_exec_as_app git config --global init.defaultBranch master
+    ynh_exec_as_app git init
+    ynh_exec_as_app git add .
+    ynh_exec_as_app git commit -m "init"
     ynh_hide_warnings ynh_exec_as_app pnpm install --frozen-lockfile
     ynh_hide_warnings ynh_exec_as_app pnpm build
 popd
